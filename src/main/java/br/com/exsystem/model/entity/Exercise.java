@@ -9,6 +9,7 @@ public class Exercise extends BaseEntity {
     private String instructions;
     private byte[] photo;
     private List<BodyPart> bodyPartList;
+    
 
     public String getName() {
         return name;

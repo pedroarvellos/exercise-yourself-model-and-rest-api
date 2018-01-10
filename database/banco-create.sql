@@ -11,8 +11,15 @@ CREATE TABLE exercise (
         exercise_description TEXT,
         exercise_photo BYTEA,
         exercise_instructions TEXT,
-        exercise_body_part_fk BIGINT,
 	PRIMARY KEY (exercise_id) 
 );
 
-ALTER TABLE exercise ADD CONSTRAINT exercise_body_part FOREIGN KEY (exercise_body_part_fk) REFERENCES body_part(body_part_id) ON UPDATE CASCADE ON DELETE SET NULL;
+CREATE TABLE body_part_exercise (
+        body_part_exercise_id BIGSERIAL NOT NULL,
+        body_part_fk BIGINT NOT NULL,
+        exercise_fk BIGINT NOT NULL,
+	PRIMARY KEY (body_part_exercise_id) 
+);
+
+ALTER TABLE body_part_exercise ADD CONSTRAINT body_part_exercise_body_part FOREIGN KEY (body_part_fk) REFERENCES body_part(body_part_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE body_part_exercise ADD CONSTRAINT body_part_exercise_exercise FOREIGN KEY (exercise_fk) REFERENCES exercise(exercise_id) ON UPDATE CASCADE ON DELETE CASCADE;
