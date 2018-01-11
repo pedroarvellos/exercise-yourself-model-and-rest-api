@@ -1,15 +1,20 @@
 package br.com.exsystem.model.entity;
 
 import br.com.exsystem.model.base.BaseEntity;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Exercise extends BaseEntity {
+
     private String name;
     private String description;
     private String instructions;
     private byte[] photo;
     private List<BodyPart> bodyPartList;
-    
+
+    public Exercise() {
+        bodyPartList = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
