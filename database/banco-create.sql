@@ -23,3 +23,14 @@ CREATE TABLE body_part_exercise (
 
 ALTER TABLE body_part_exercise ADD CONSTRAINT body_part_exercise_body_part FOREIGN KEY (body_part_fk) REFERENCES body_part(body_part_id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE body_part_exercise ADD CONSTRAINT body_part_exercise_exercise FOREIGN KEY (exercise_fk) REFERENCES exercise(exercise_id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Triceps', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Chest', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Shoulder', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Biceps', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Abs', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Back', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Forearm', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Thigh', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Glutes', '');
+INSERT INTO public.body_part(body_part_name, body_part_photo) VALUES ('Calf', '');
