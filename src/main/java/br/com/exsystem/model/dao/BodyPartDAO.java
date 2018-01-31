@@ -38,7 +38,7 @@ public class BodyPartDAO implements BaseDAO<BodyPart> {
             bodyPart = new BodyPart();
             bodyPart.setId(rs.getLong("body_part_id"));
             bodyPart.setName(rs.getString("body_part_name"));
-            bodyPart.setPhoto(rs.getBytes("body_part_photo"));
+            bodyPart.setPhoto(rs.getString("body_part_photo"));
 
             bodyPartList.add(bodyPart);
         }

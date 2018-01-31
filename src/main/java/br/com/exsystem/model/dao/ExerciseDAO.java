@@ -25,7 +25,7 @@ public class ExerciseDAO implements BaseDAO<Exercise> {
         int i = 0;
         ps.setString(++i, entity.getName());
         ps.setString(++i, entity.getDescription());
-        ps.setBytes(++i, entity.getPhoto());
+        ps.setString(++i, entity.getPhoto());
         ps.setString(++i, entity.getInstructions());
 
         ResultSet rs = ps.executeQuery();
@@ -83,13 +83,13 @@ public class ExerciseDAO implements BaseDAO<Exercise> {
             entity.setName(rs.getString("exercise_name"));
             entity.setDescription(rs.getString("exercise_description"));
             entity.setInstructions(rs.getString("exercise_instructions"));
-            entity.setPhoto(rs.getBytes("exercise_photo"));
+            entity.setPhoto(rs.getString("exercise_photo"));
 
             BodyPart bodyEntityFirst = new BodyPart();
 
             bodyEntityFirst.setId(rs.getLong("body_part_id"));
             bodyEntityFirst.setName(rs.getString("body_part_name"));
-            bodyEntityFirst.setPhoto(rs.getBytes("body_part_photo"));
+            bodyEntityFirst.setPhoto(rs.getString("body_part_photo"));
 
             entity.getBodyPartList().add(bodyEntityFirst);
 
@@ -98,7 +98,7 @@ public class ExerciseDAO implements BaseDAO<Exercise> {
 
                 bodyEntityNext.setId(rs.getLong("body_part_id"));
                 bodyEntityNext.setName(rs.getString("body_part_name"));
-                bodyEntityNext.setPhoto(rs.getBytes("body_part_photo"));
+                bodyEntityNext.setPhoto(rs.getString("body_part_photo"));
 
                 entity.getBodyPartList().add(bodyEntityNext);
             }
@@ -131,7 +131,7 @@ public class ExerciseDAO implements BaseDAO<Exercise> {
             entity.setName(rs.getString("exercise_name"));
             entity.setDescription(rs.getString("exercise_description"));
             entity.setInstructions(rs.getString("exercise_instructions"));
-            entity.setPhoto(rs.getBytes("exercise_photo"));
+            entity.setPhoto(rs.getString("exercise_photo"));
             
             exerciseList.add(entity);
 
@@ -140,7 +140,7 @@ public class ExerciseDAO implements BaseDAO<Exercise> {
 
                 bodyEntity.setId(rs.getLong("body_part_id"));
                 bodyEntity.setName(rs.getString("body_part_name"));
-                bodyEntity.setPhoto(rs.getBytes("body_part_photo"));
+                bodyEntity.setPhoto(rs.getString("body_part_photo"));
 
                 entity.getBodyPartList().add(bodyEntity);
 

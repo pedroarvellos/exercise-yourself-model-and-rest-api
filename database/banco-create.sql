@@ -1,7 +1,7 @@
 CREATE TABLE body_part (
 	body_part_id BIGSERIAL NOT NULL,
 	body_part_name VARCHAR (100) NOT NULL,
-	body_part_photo BYTEA,
+	body_part_photo TEXT,
 	PRIMARY KEY (body_part_id)
 );
 
@@ -9,7 +9,7 @@ CREATE TABLE exercise (
         exercise_id BIGSERIAL NOT NULL,
         exercise_name VARCHAR (100) NOT NULL,
         exercise_description TEXT,
-        exercise_photo BYTEA,
+        exercise_photo TEXT,
         exercise_instructions TEXT,
 	PRIMARY KEY (exercise_id) 
 );

@@ -4,7 +4,7 @@ import br.com.exsystem.model.base.BaseEntity;
 
 public class BodyPart extends BaseEntity {
     private String name;
-    private byte[] photo;
+    private String photo;
 
     public String getName() {
         return name;
@@ -14,11 +14,11 @@ public class BodyPart extends BaseEntity {
         this.name = name;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 }

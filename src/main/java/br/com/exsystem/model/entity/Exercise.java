@@ -9,7 +9,7 @@ public class Exercise extends BaseEntity {
     private String name;
     private String description;
     private String instructions;
-    private byte[] photo;
+    private String photo;
     private List<BodyPart> bodyPartList;
 
     public Exercise() {
@@ -40,11 +40,11 @@ public class Exercise extends BaseEntity {
         this.instructions = instructions;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
